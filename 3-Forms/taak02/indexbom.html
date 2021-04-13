@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invoer</title>
+</head>
+<body>
+    
+<form action="mijngegevens.php" method="post">
+    
+    Voornaam:   <input type="text" name="voornaam"><br>
+    Achternaam: <input type="text" name="achternaam"><br>
+    Klas: <input type="text" name="klas"><br>
+    Leeftijd: <input type="text" name="leeftijd"><br>
+    Adres: <input type="text" name="adres"><br>
+    Plaatsnaam: <input type="text" name="plaatsnaam"><br>
+    Favoriete muziekband: <input type="text" name="a"><br>
+
+<!--RADIO BUTTONS-->
+<p>Geslacht:</p>
+
+<div>
+  <input type="radio" id="vrouw" name="geslacht" value="vrouw"
+         checked>
+  <label for="vrouw">Vrouw</label>
+</div>
+
+<div>
+  <input type="radio" id="man" name="geslacht" value="man">
+  <label for="man">Man</label>
+</div>
+
+<div>
+  <input type="radio" id="nonbinair" name="geslacht" value="nonbinair">
+  <label for="nonbinair">Non-binair</label>
+</div>
+
+<!--COLOUR SELECT-->
+    <label for="colour">Kies een kleur:</label>
+    <select id="colour" name="colour">
+    <option value="red">Rood</option>
+    <option value="yellow">Geel</option>
+    <option value="pink">Roze</option>
+    <option value="purple">Paars</option>
+    <option value="green">Groen</option>
+    </select>
+    <input type="submit" name="submit" value="verstuur">
+</form>
+
+
+</body>
+</html>
