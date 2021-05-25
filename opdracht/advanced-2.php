@@ -1,33 +1,50 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
-<form name="invoer" action="advanced-2.php" method="post">
-<select name="achtergrondkleur" id="achtergrondkleur">
-<?php
-$kleuren = array("red", "blue", "green", "black", "brown");
-foreach($kleuren as $optie){
-    echo "<option value=$optie>$optie</option>";
-}
+    <style>
+        body {
+            background-color: <?php echo $_POST["achtergrondkleur"]; ?>;
+        }
 
-?>
-</select>
-<a>tekst kleur</a>
+        table,
+        th,
+        tr,
+        td {
+            color: <?php echo $_POST["tekstkleur"] ?>;
+            border: <?php echo $_POST["border"] ?> solid;
+            padding: <?php echo $_POST["padding"] ?>;
+        }
+    </style>
 
-<input type= "text" name="border">
-<a>border</a>
+    <?php $mijnGegevens = array("Naam" => "Alisha", "Leeftijd" => "16", "Klas" => "0A", "Muziek" => "Indie Pop", "Woonplaats" => "Uithoorn"); ?>
+    <?php function maakRij($key, $waarde)
+    {
+        echo   "<tr>
+            <td>
+               $key
+            </td>
+            <td>
+               $waarde
+            </td>
+        </tr>";
+    }
+    ?>
+    <table>
+        <tbody>
+            <?php foreach ($mijnGegevens as $key => $waarde) : ?>
+                <?php maakRij($key, $waarde); ?>
+            <?php endforeach; ?>
 
-<input type= "text" name= "padding">
-<a>padding</a>
-
-
-<input type="submit"name="submit"value="verstuur">
-</form>
+        </tbody>
+    </table>
 </body>
+
 </html>

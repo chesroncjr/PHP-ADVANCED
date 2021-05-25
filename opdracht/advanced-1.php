@@ -1,50 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Document</title>
-    <style>
-        body{
-            background-color: <?php echo $_POST["achtergrondkleur"] ?>;
-
-        }
-        table,tr,td {
-                    padding: <?php echo $_POST["padding"] ?>px;
-                    border: <?php echo $_POST["border"] ?>px solid black;
-                }
-
-    </style>
 </head>
 
 <body>
- 
- 
-    <table border="$info" >
-        <thead>
-            <tr>
-              <th>key</th>
-              <th>value</th>
-            </tr>
-            </thead>
-            <tbody>
+    <form action="advanced-2.php" method="POST">
+        <h1>Vul in!</h1>
+
+        <label>Kies een achtergrond kleur:</label>
+        <select name="achtergrondkleur" id="achtergrondkleur">
+
             <?php
-                        $info2= array("naam"=>"Naam", "achternaam"=>"Achternaam", "klas"=>"Klas", "muziek"=>"Favorite music");
-                        $info= array("naam"=>"Chesron", "achternaam"=>"Coutinho", "klas"=>"0A", "muziek"=>"Blesed");
-                        
+            $kleuren = array("red", "blue", "green", "black", "brown");
 
-                        function maakrij($info2){
+            foreach ($kleuren as $value) {
+                echo "<option value=$value>$value</option>";
+            };
+            ?>
+        </select><br>
 
-                                return $info2;
-                        }
-                            foreach($info2 as $index => $thing){
+        <label>Kies een tekst kleur:</label>
+        <select name="tekstkleur" id="tekstkleur">
 
-                                echo "<tr><td> $thing </td><td> $info[$index] </td></tr>";
-                            }
+            <?php
+            $kleuren = array("red", "blue", "green", "black", "brown");
+            foreach ($kleuren as $tekstkleur) {
+                echo "<option value=$tekstkleur>$tekstkleur</option>";
+            };
 
-                    ?>
-  
+            ?>
 
+        </select><br>
+
+        <label>Border dikte (px)</label>
+        <input type="text" name="border" placeholder="bijv. 5px"><br>
+
+        <label>Cel-padding (px)</label>
+        <input type="text" name="padding" placeholder="bijv. 5px"><br>
+
+        <input type="submit" name="submit" value="verstuur">
+
+    </form>
 </body>
+
 </html>
