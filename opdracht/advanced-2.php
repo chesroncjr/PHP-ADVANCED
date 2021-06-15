@@ -11,7 +11,7 @@
 <body>
     <style>
         body {
-            background-color: <?php echo $_POST["achtergrondkleur"]; ?>;
+        background-color: <?php echo $_POST["achtergrondkleur"]; ?>;
         }
 
         table,
